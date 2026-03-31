@@ -1,0 +1,168 @@
+{
+  "name": "flowx-control",
+  "version": "1.0.0",
+  "description": "The ultimate zero-dependency TypeScript resilience & async flow control toolkit. Retry, Circuit Breaker, Bulkhead, Rate Limiter, Queue, Semaphore, Mutex, Pipeline, and more — all composable.",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./retry": {
+      "import": "./dist/retry.mjs",
+      "require": "./dist/retry.js",
+      "types": "./dist/retry.d.ts"
+    },
+    "./circuit-breaker": {
+      "import": "./dist/circuit-breaker.mjs",
+      "require": "./dist/circuit-breaker.js",
+      "types": "./dist/circuit-breaker.d.ts"
+    },
+    "./bulkhead": {
+      "import": "./dist/bulkhead.mjs",
+      "require": "./dist/bulkhead.js",
+      "types": "./dist/bulkhead.d.ts"
+    },
+    "./fallback": {
+      "import": "./dist/fallback.mjs",
+      "require": "./dist/fallback.js",
+      "types": "./dist/fallback.d.ts"
+    },
+    "./hedge": {
+      "import": "./dist/hedge.mjs",
+      "require": "./dist/hedge.js",
+      "types": "./dist/hedge.d.ts"
+    },
+    "./timeout": {
+      "import": "./dist/timeout.mjs",
+      "require": "./dist/timeout.js",
+      "types": "./dist/timeout.d.ts"
+    },
+    "./semaphore": {
+      "import": "./dist/semaphore.mjs",
+      "require": "./dist/semaphore.js",
+      "types": "./dist/semaphore.d.ts"
+    },
+    "./mutex": {
+      "import": "./dist/mutex.mjs",
+      "require": "./dist/mutex.js",
+      "types": "./dist/mutex.d.ts"
+    },
+    "./queue": {
+      "import": "./dist/queue.mjs",
+      "require": "./dist/queue.js",
+      "types": "./dist/queue.d.ts"
+    },
+    "./rate-limit": {
+      "import": "./dist/rate-limit.mjs",
+      "require": "./dist/rate-limit.js",
+      "types": "./dist/rate-limit.d.ts"
+    },
+    "./debounce": {
+      "import": "./dist/debounce.mjs",
+      "require": "./dist/debounce.js",
+      "types": "./dist/debounce.d.ts"
+    },
+    "./throttle": {
+      "import": "./dist/throttle.mjs",
+      "require": "./dist/throttle.js",
+      "types": "./dist/throttle.d.ts"
+    },
+    "./batch": {
+      "import": "./dist/batch.mjs",
+      "require": "./dist/batch.js",
+      "types": "./dist/batch.d.ts"
+    },
+    "./pipeline": {
+      "import": "./dist/pipeline.mjs",
+      "require": "./dist/pipeline.js",
+      "types": "./dist/pipeline.d.ts"
+    },
+    "./poll": {
+      "import": "./dist/poll.mjs",
+      "require": "./dist/poll.js",
+      "types": "./dist/poll.d.ts"
+    },
+    "./deferred": {
+      "import": "./dist/deferred.mjs",
+      "require": "./dist/deferred.js",
+      "types": "./dist/deferred.d.ts"
+    },
+    "./memo": {
+      "import": "./dist/memo.mjs",
+      "require": "./dist/memo.js",
+      "types": "./dist/memo.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "jest --coverage",
+    "test:ci": "jest --coverage",
+    "lint": "eslint src/ --ext .ts",
+    "format": "prettier --write \"src/**/*.ts\" \"__tests__/**/*.ts\"",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run lint && npm run test:ci && npm run build"
+  },
+  "keywords": [
+    "async",
+    "retry",
+    "circuit-breaker",
+    "bulkhead",
+    "rate-limit",
+    "queue",
+    "semaphore",
+    "mutex",
+    "throttle",
+    "debounce",
+    "resilience",
+    "fault-tolerance",
+    "backoff",
+    "timeout",
+    "pipeline",
+    "concurrency",
+    "flow-control",
+    "typescript",
+    "zero-dependency",
+    "hedge",
+    "fallback",
+    "batch",
+    "polling",
+    "memoize",
+    "deferred",
+    "promise"
+  ],
+  "author": "Avinash Velu <avinashvelu03@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Avinashvelu03/flowx.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Avinashvelu03/flowx/issues"
+  },
+  "homepage": "https://github.com/Avinashvelu03/flowx#readme",
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "eslint": "^8.57.0",
+    "jest": "^29.7.0",
+    "prettier": "^3.3.0",
+    "ts-jest": "^29.2.0",
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "sideEffects": false
+}

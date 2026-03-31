@@ -1,0 +1,31 @@
+import { defineConfig } from 'tsup';
+
+export default defineConfig({
+  entry: [
+    'src/index.ts',
+    'src/retry.ts',
+    'src/circuit-breaker.ts',
+    'src/bulkhead.ts',
+    'src/fallback.ts',
+    'src/hedge.ts',
+    'src/timeout.ts',
+    'src/semaphore.ts',
+    'src/mutex.ts',
+    'src/queue.ts',
+    'src/rate-limit.ts',
+    'src/debounce.ts',
+    'src/throttle.ts',
+    'src/batch.ts',
+    'src/pipeline.ts',
+    'src/poll.ts',
+    'src/deferred.ts',
+    'src/memo.ts',
+  ],
+  format: ['cjs', 'esm'],
+  dts: true,
+  splitting: false,
+  sourcemap: true,
+  clean: true,
+  minify: false,
+  treeshake: true,
+});

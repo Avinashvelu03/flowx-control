@@ -1,0 +1,25 @@
+﻿node.exe : PASS __tests__/batch.test.ts
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (PASS __tests__/batch.test.ts:String) [], Remo 
+   teException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  batch
+    ΓêÜ should process all items (4 ms)
+    ΓêÜ should handle empty items
+    ΓêÜ should respect concurrency (85 ms)
+    ΓêÜ should respect batchSize (1 ms)
+    ΓêÜ should collect errors without stopping (2 ms)
+    ΓêÜ should call onProgress (3 ms)
+    ΓêÜ should abort with signal (80 ms)
+    ΓêÜ should throw RangeError for invalid options (5 ms)
+    ΓêÜ should pass index to callback (1 ms)
+    ΓêÜ should use default options
+
+Test Suites: 1 passed, 1 total
+Tests:       10 passed, 10 total
+Snapshots:   0 total
+Time:        0.899 s, estimated 1 s
+Ran all test suites matching /__tests__\\batch.test.ts/i.

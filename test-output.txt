@@ -1,0 +1,42 @@
+﻿node.exe : FAIL __tests__/debounce.test.ts
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (FAIL __tests__/debounce.test.ts:String) [], R 
+   emoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  debounce
+    ΓêÜ should debounce calls (trailing) (64 ms)
+    ΓêÜ should support leading edge (1 ms)
+    ΓêÜ should support maxWait (78 ms)
+    ΓêÜ should cancel pending invocation (15 ms)
+    ΓêÜ should flush pending invocation (1 ms)
+    ΓêÜ should return undefined when flush with nothing pending (1 ms)
+    ΓêÜ should track pending state (1 ms)
+    ΓêÜ should throw RangeError for negative wait (2 ms)
+    ├ù should handle errors from the function (52 ms)
+    ΓêÜ should handle both leading and trailing (97 ms)
+
+  ΓùÅ debounce ΓÇ║ should handle errors from the function
+
+    Debounced call cancelled
+
+    [0m [90m 129 |[39m     [36mconst[39m resolvers [33m=[39m 
+pendingResolvers[33m.[39msplice([35m0[39m)[33m;[39m
+     [90m 130 |[39m     [36mfor[39m ([36mconst[39m r [36mof[39m resolvers) {
+    [31m[1m>[22m[39m[90m 131 |[39m       r[33m.[39mreject([36mnew[39m 
+[33mError[39m([32m'Debounced call cancelled'[39m))[33m;[39m
+     [90m     |[39m                [31m[1m^[22m[39m
+     [90m 132 |[39m     }
+     [90m 133 |[39m   }[33m;[39m
+     [90m 134 |[39m[0m
+
+      at debounced.cancel (src/debounce.ts:131:16)
+      at Object.<anonymous> (__tests__/debounce.test.ts:77:15)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 9 passed, 10 total
+Snapshots:   0 total
+Time:        1.049 s
+Ran all test suites matching /__tests__\\debounce.test.ts/i.

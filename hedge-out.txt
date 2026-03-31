@@ -1,0 +1,119 @@
+﻿node.exe : FAIL __tests__/hedge.test.ts
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (FAIL __tests__/hedge.test.ts:String) [], 
+Remo    teException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  hedge
+    ΓêÜ should return primary result when fast enough (7 ms)
+    ΓêÜ should return first resolving call (35 ms)
+    ΓêÜ should handle all calls failing (30 ms)
+    ΓêÜ should support multiple hedges (172 ms)
+    ├ù should throw RangeError for negative delay (1 ms)
+    ├ù should throw RangeError for maxHedges < 1 (1 ms)
+    ΓêÜ should use default options (1 ms)
+    ├ù should handle non-Error rejections (26 ms)
+    ΓêÜ should clear timers when primary resolves first (1 ms)
+    ΓêÜ should not resolve twice if multiple hedges succeed (150 ms)
+
+  ΓùÅ hedge ΓÇ║ should throw RangeError for negative delay
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: RangeError
+
+    Received function did not throw
+
+    [0m [90m 39 |[39m
+     [90m 40 |[39m   it([32m'should throw RangeError for negative 
+delay'[39m[33m,[39m () [33m=>[39m {
+    [31m[1m>[22m[39m[90m 41 |[39m     expect(() [33m=>[39m 
+hedge(jest[33m.[39mfn()[33m,[39m { delay[33m:[39m [33m-[39m[35m1[39m 
+}))[33m.[39mtoThrow([33mRangeError[39m)[33m;[39m
+     [90m    |[39m                                                   
+[31m[1m^[22m[39m
+     [90m 42 |[39m   })[33m;[39m
+     [90m 43 |[39m
+     [90m 44 |[39m   it([32m'should throw RangeError for maxHedges < 
+1'[39m[33m,[39m () [33m=>[39m {[0m
+
+      at Object.<anonymous> (__tests__/hedge.test.ts:41:51)
+
+  ΓùÅ hedge ΓÇ║ should throw RangeError for maxHedges < 1
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: RangeError
+
+    Received function did not throw
+
+    [0m [90m 43 |[39m
+     [90m 44 |[39m   it([32m'should throw RangeError for maxHedges < 
+1'[39m[33m,[39m () [33m=>[39m {
+    [31m[1m>[22m[39m[90m 45 |[39m     expect(() [33m=>[39m 
+hedge(jest[33m.[39mfn()[33m,[39m { maxHedges[33m:[39m [35m0[39m 
+}))[33m.[39mtoThrow([33mRangeError[39m)[33m;[39m
+     [90m    |[39m                                                      
+[31m[1m^[22m[39m
+     [90m 46 |[39m   })[33m;[39m
+     [90m 47 |[39m
+     [90m 48 |[39m   it([32m'should use default options'[39m[33m,[39m 
+[36masync[39m () [33m=>[39m {[0m
+
+      at Object.<anonymous> (__tests__/hedge.test.ts:45:54)
+
+  ΓùÅ hedge ΓÇ║ should handle non-Error rejections
+
+    RangeError: delay must be >= 0
+
+    [0m [90m 25 |[39m   [36mconst[39m { delay [33m=[39m [35m500[39m[33m,[39m 
+maxHedges [33m=[39m [35m1[39m } [33m=[39m options [33m?[39m[33m?[39m 
+{}[33m;[39m
+     [90m 26 |[39m
+    [31m[1m>[22m[39m[90m 27 |[39m   [36mif[39m (delay [33m<[39m [35m0[39m) 
+[36mthrow[39m [36mnew[39m [33mRangeError[39m([32m'delay must be >= 
+0'[39m)[33m;[39m
+     [90m    |[39m                        [31m[1m^[22m[39m
+     [90m 28 |[39m   [36mif[39m (maxHedges [33m<[39m [35m1[39m) [36mthrow[39m 
+[36mnew[39m [33mRangeError[39m([32m'maxHedges must be >= 1'[39m)[33m;[39m
+     [90m 29 |[39m
+     [90m 30 |[39m   [36mreturn[39m [36mnew[39m 
+[33mPromise[39m[33m<[39m[33mT[39m[33m>[39m((resolve[33m,[39m reject) 
+[33m=>[39m {[0m
+
+      at hedge (src/hedge.ts:27:24)
+      at __tests__/hedge.test.ts:41:23
+      at Object.<anonymous> (node_modules/expect/build/toThrowMatchers.js:74:11)
+      at Object.throwingMatcher [as toThrow] (node_modules/expect/build/index.js:320:21)
+      at Object.<anonymous> (__tests__/hedge.test.ts:41:51)
+
+  ΓùÅ hedge ΓÇ║ should handle non-Error rejections
+
+    RangeError: maxHedges must be >= 1
+
+    [0m [90m 26 |[39m
+     [90m 27 |[39m   [36mif[39m (delay [33m<[39m [35m0[39m) [36mthrow[39m 
+[36mnew[39m [33mRangeError[39m([32m'delay must be >= 0'[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m 28 |[39m   [36mif[39m (maxHedges [33m<[39m 
+[35m1[39m) [36mthrow[39m [36mnew[39m [33mRangeError[39m([32m'maxHedges must be 
+>= 1'[39m)[33m;[39m
+     [90m    |[39m                            [31m[1m^[22m[39m
+     [90m 29 |[39m
+     [90m 30 |[39m   [36mreturn[39m [36mnew[39m 
+[33mPromise[39m[33m<[39m[33mT[39m[33m>[39m((resolve[33m,[39m reject) 
+[33m=>[39m {
+     [90m 31 |[39m     [36mlet[39m settled [33m=[39m [36mfalse[39m[33m;[39m[0m
+
+      at hedge (src/hedge.ts:28:28)
+      at __tests__/hedge.test.ts:45:23
+      at Object.<anonymous> (node_modules/expect/build/toThrowMatchers.js:74:11)
+      at Object.throwingMatcher [as toThrow] (node_modules/expect/build/index.js:320:21)
+      at Object.<anonymous> (__tests__/hedge.test.ts:45:54)
+
+Test Suites: 1 failed, 1 total
+Tests:       3 failed, 7 passed, 10 total
+Snapshots:   0 total
+Time:        1.631 s
+Ran all test suites matching /__tests__\\hedge.test.ts/i.

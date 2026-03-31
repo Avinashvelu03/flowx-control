@@ -1,0 +1,25 @@
+﻿node.exe : PASS __tests__/poll.test.ts
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (PASS __tests__/poll.test.ts:String) [], Remot 
+   eException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  poll
+    ΓêÜ should resolve immediately when until returns true (4 ms)
+    ΓêÜ should poll until condition is met (54 ms)
+    ΓêÜ should respect maxAttempts (46 ms)
+    ΓêÜ should stop when stop() is called (34 ms)
+    ΓêÜ should abort with signal (50 ms)
+    ΓêÜ should support exponential backoff (11 ms)
+    ΓêÜ should resolve without until predicate (first call) (1 ms)
+    ΓêÜ should throw RangeError for negative interval (4 ms)
+    ΓêÜ should handle sync return values (1 ms)
+    ΓêÜ should use default options (1 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       10 passed, 10 total
+Snapshots:   0 total
+Time:        1.009 s
+Ran all test suites matching /__tests__\\poll.test.ts/i.

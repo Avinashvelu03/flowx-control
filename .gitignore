@@ -1,0 +1,7 @@
+node_modules/
+dist/
+coverage/
+fails.txt
+lint.txt
+lint2.txt
+poll-fail.txt
