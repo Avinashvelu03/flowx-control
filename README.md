@@ -79,8 +79,7 @@ await limiter.execute(() => callExternalApi());
 
 ### 🛡️ Resilience
 
-<details>
-<summary><strong>retry</strong> — Retry with backoff & jitter</summary>
+#### retry — Retry with backoff & jitter
 
 ```ts
 import { retry } from 'flowx-control/retry';
@@ -95,10 +94,7 @@ const data = await retry(() => fetch('/api'), {
   signal: abortController.signal,
 });
 ```
-</details>
-
-<details>
-<summary><strong>circuitBreaker</strong> — Stop cascading failures</summary>
+#### circuitBreaker — Stop cascading failures
 
 ```ts
 import { createCircuitBreaker } from 'flowx-control/circuit-breaker';
@@ -117,10 +113,7 @@ console.log(breaker.state);       // 'closed' | 'open' | 'half-open'
 console.log(breaker.failureCount);
 breaker.reset();
 ```
-</details>
-
-<details>
-<summary><strong>fallback</strong> — Graceful degradation</summary>
+#### fallback — Graceful degradation
 
 ```ts
 import { withFallback, fallbackChain } from 'flowx-control/fallback';
@@ -137,10 +130,7 @@ const result = await fallbackChain([
   () => fetchFromFallback(),
 ]);
 ```
-</details>
-
-<details>
-<summary><strong>timeout</strong> — Never wait forever</summary>
+#### timeout — Never wait forever
 
 ```ts
 import { withTimeout } from 'flowx-control/timeout';
@@ -151,12 +141,9 @@ const result = await withTimeout(() => fetch('/slow-api'), 5000, {
   signal: controller.signal,
 });
 ```
-</details>
-
 ### 🚦 Concurrency
 
-<details>
-<summary><strong>bulkhead</strong> — Isolate concurrent operations</summary>
+#### bulkhead — Isolate concurrent operations
 
 ```ts
 import { createBulkhead } from 'flowx-control/bulkhead';
@@ -170,10 +157,7 @@ const bulkhead = createBulkhead({
 const result = await bulkhead.execute(() => processRequest());
 console.log(bulkhead.activeCount, bulkhead.queueSize);
 ```
-</details>
-
-<details>
-<summary><strong>queue</strong> — Priority async task queue</summary>
+#### queue — Priority async task queue
 
 ```ts
 import { createQueue } from 'flowx-control/queue';
@@ -187,10 +171,7 @@ await queue.onIdle(); // wait until all done
 queue.pause();
 queue.resume();
 ```
-</details>
-
-<details>
-<summary><strong>semaphore</strong> — Counting resource lock</summary>
+#### semaphore — Counting resource lock
 
 ```ts
 import { createSemaphore } from 'flowx-control/semaphore';
@@ -203,10 +184,7 @@ try {
   release();
 }
 ```
-</details>
-
-<details>
-<summary><strong>mutex</strong> — Mutual exclusion lock</summary>
+#### mutex — Mutual exclusion lock
 
 ```ts
 import { createMutex } from 'flowx-control/mutex';
@@ -219,12 +197,9 @@ try {
   release();
 }
 ```
-</details>
-
 ### 🎛️ Flow Control
 
-<details>
-<summary><strong>rateLimit</strong> — Token bucket rate limiting</summary>
+#### rateLimit — Token bucket rate limiting
 
 ```ts
 import { createRateLimiter } from 'flowx-control/rate-limit';
@@ -239,10 +214,7 @@ await limiter.execute(() => callApi());
 console.log(limiter.remaining);
 limiter.reset();
 ```
-</details>
-
-<details>
-<summary><strong>throttle</strong> — Rate-limit function calls</summary>
+#### throttle — Rate-limit function calls
 
 ```ts
 import { throttle } from 'flowx-control/throttle';
@@ -255,10 +227,7 @@ const save = throttle(saveToDb, 1000, {
 await save(data);
 save.cancel();
 ```
-</details>
-
-<details>
-<summary><strong>debounce</strong> — Delay until activity pauses</summary>
+#### debounce — Delay until activity pauses
 
 ```ts
 import { debounce } from 'flowx-control/debounce';
@@ -273,10 +242,7 @@ await search(query);
 await search.flush();
 search.cancel();
 ```
-</details>
-
-<details>
-<summary><strong>batch</strong> — Process collections in chunks</summary>
+#### batch — Process collections in chunks
 
 ```ts
 import { batch } from 'flowx-control/batch';
@@ -292,10 +258,7 @@ const result = await batch(urls, async (url, i) => {
 
 console.log(result.succeeded, result.failed, result.errors);
 ```
-</details>
-
-<details>
-<summary><strong>pipeline</strong> — Compose async operations</summary>
+#### pipeline — Compose async operations
 
 ```ts
 import { pipeline, pipe } from 'flowx-control/pipeline';
@@ -308,12 +271,9 @@ const transform = pipe(
 
 const result = await transform('  hello world  ');
 ```
-</details>
-
 ### 🛠️ Utilities
 
-<details>
-<summary><strong>poll</strong> — Repeated polling with backoff</summary>
+#### poll — Repeated polling with backoff
 
 ```ts
 import { poll } from 'flowx-control/poll';
@@ -328,10 +288,7 @@ const { result, stop } = poll(() => checkJobStatus(jobId), {
 
 const finalStatus = await result;
 ```
-</details>
-
-<details>
-<summary><strong>hedge</strong> — Hedged/speculative requests</summary>
+#### hedge — Hedged/speculative requests
 
 ```ts
 import { hedge } from 'flowx-control/hedge';
@@ -342,10 +299,7 @@ const data = await hedge(() => fetch('/api'), {
   maxHedges: 2,
 });
 ```
-</details>
-
-<details>
-<summary><strong>memo</strong> — Async memoization with TTL</summary>
+#### memo — Async memoization with TTL
 
 ```ts
 import { memo } from 'flowx-control/memo';
@@ -359,10 +313,7 @@ const cachedFetch = memo(fetchUserById, {
 const user = await cachedFetch(123);
 cachedFetch.clear();
 ```
-</details>
-
-<details>
-<summary><strong>deferred</strong> — Externally resolvable promise</summary>
+#### deferred — Externally resolvable promise
 
 ```ts
 import { deferred } from 'flowx-control/deferred';
@@ -371,8 +322,6 @@ const d = deferred<string>();
 setTimeout(() => d.resolve('hello'), 1000);
 const value = await d.promise; // 'hello'
 ```
-</details>
-
 ---
 
 ## Deep Imports (Tree-shaking)
@@ -441,3 +390,4 @@ npm run build     # Build ESM + CJS + DTS
 ## License
 
 MIT © [Avinash](https://github.com/Avinashvelu03)
+
