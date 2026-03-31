@@ -1,6 +1,6 @@
 {
   "name": "flowx-control",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Production-grade, zero-dependency TypeScript resilience & async flow control library. 100% test coverage. Retry with backoff, Circuit Breaker, Bulkhead, Rate Limiter, Priority Queue, Semaphore, Mutex, Debounce, Throttle, Timeout, Hedge, Poll, Batch, Pipeline — all tree-shakable & composable.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
