@@ -1,13 +1,11 @@
 ---
-name: Feature Request
-about: Suggest a new feature for flowx-control
-title: '[FEAT] '
+name: Feature request
+about: Suggest an idea
 labels: enhancement
-assignees: Avinashvelu03
 ---
 
-## Problem
+**Problem**
 
-## Proposed Solution
+**Solution**
 
-## Alternatives
+**Alternatives**

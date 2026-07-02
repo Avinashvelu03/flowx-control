@@ -2,23 +2,11 @@
 
 ## Supported Versions
 
-The latest released version receives security updates.
+| Version | Supported          |
+| ------- | ------------------ |
+| 1.x     | :white_check_mark: |
 
 ## Reporting a Vulnerability
 
-Please do not report security vulnerabilities through public GitHub issues.
-
-Instead, please report them privately via GitHub's
-[Security Advisories](https://github.com/Avinashvelu03/flowx-control/security/advisories/new)
-feature, or by email to avinashmech3@gmail.com.
-
-Please include as much of the following information as possible to help us
-better understand and resolve the issue:
-
-- Type of issue
-- Affected version(s)
-- Steps to reproduce
-- Potential impact
-
-We will acknowledge your report as soon as possible and keep you informed of
-the progress toward a fix.
+Email **avinashvelu03@gmail.com** — do not open a public issue.
+Response within 48 hours, patch within 7 days if confirmed.
