@@ -1,18 +1,16 @@
 ---
-name: Bug Report
-about: Report a bug in flowx-control
-title: '[BUG] '
+name: Bug report
+about: Report a bug
 labels: bug
-assignees: Avinashvelu03
 ---
 
-## Describe the bug
+**Describe the bug**
 
-## To Reproduce
+**To Reproduce**
 
-## Expected behavior
+**Expected behavior**
 
-## Environment
+**Environment**
 - flowx-control version:
-- Runtime version:
+- Node.js version:
 - OS:
